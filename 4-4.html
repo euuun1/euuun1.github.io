@@ -1,0 +1,48 @@
+<html>
+<head><title>회원 가입</title>
+   <meta charset="utf-8">
+
+<script>
+function form_submit() {
+	if (document.edit.member_name.value=="") {
+		alert("회원명을 입력하세요");
+	}
+	else {
+		document.edit.submit();
+	}
+}
+</script>
+</head>
+
+<body>
+<br>
+<center><H2>회원 가입</h2>
+<br>
+<br><br>
+<form action="member_insertdo.asp" name="edit" method=post>
+<table border=0 bgcolor=white>
+   <tr><td align=right>회원명 </td> <td align=left><input type=text name="member_name" size=20></td></tr>
+   <tr><td align=right>성별 </td> <td> <input type="radio" name="sex" value="M" checked="checked">남 <input type="radio" name="sex" value="F">여 </td></tr>
+   <tr><td align=right>핸드폰 </td> <td align=left><input type=text name="hand_tel" size=20> 예) 010-222-3333</td></tr>
+   <tr><td align=right>집전화 </td> <td align=left><input type=text name="home_tel" size=20> 예) 051-443-5555</td></tr>
+   <tr><td align=right>집주소 </td> <td align=left><input type=text name="home_addr" size=40></td></tr>
+   <tr><td align=right>이메일 </td> <td align=left><input type=text name="e_mail" size=20></td></tr>
+   <tr><td align=right>회원등급</td> <td align=left>
+                                                <SELECT NAME=memtype_no>
+                                                       <OPTION VALUE=''></OPTION>
+                                                       <OPTION VALUE='A'>최우수</OPTION>
+                                                       <OPTION VALUE='B'>우수</OPTION>
+                                                       <OPTION VALUE='C'>보통</OPTION>
+                                                       <OPTION VALUE='D'>불량</OPTION>
+                                                </SELECT>&nbsp;
+   </td></tr>
+   <tr><td align=right>예치금 </td> <td align=left><input type=text name="deposit" size=20></td></tr>
+</table>
+
+<br>
+<input type=button onclick=form_submit() value=" 저장 ">
+</form>
+<br>
+</center>
+</body>
+</html>
